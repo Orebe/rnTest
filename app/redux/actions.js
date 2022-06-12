@@ -20,13 +20,8 @@ export const setUserProfileInformations = (userProfileInformations) => (dispatch
 
 export const setStepsStateChanged = (item, index) => (dispatch, getState) => {
     const { userProfile } = getState()
-    const newArray = userProfile.steps.map((a) => ({ ...a }))
-    newArray.splice(index, 1)
-    const result = [
-        ...newArray.slice(0, index),
-        item,
-        ...newArray.slice(index),
-    ]
+    const result = [...userProfile.steps]
+    result[index] = item
     dispatch({
         type: SET_STEPS_STATE_CHANGED,
         payload: result,
