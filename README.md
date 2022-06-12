@@ -1,5 +1,33 @@
 # rnTest
 
+## Pré-requis
+
+#### Installer les pré-requis
+
+- Installer Cocoapods `sudo gem install cocoapods`.
+- Installer Node et Watchman via Homebrew (Mac) `brew install node && brew install watchman`.
+- Installer React Native CLI `npm install -g react-native-cli`.
+
+#### Télécharger le projet
+
+- Télécharger le projet avec la commande suivante via SSH `git clone git@github.com:Orebe/rnTest.git` ou  via HTTPS `git clone https://github.com/Orebe/rnTest.git`.
+
+#### Configuration du projet
+
+- Exécuter à la racine du projet puis exécuter la commande `yarn install` afin d'installer les node_modules.
+- Exécuter dans le dossier 'ios' puis exécuter la commande `pod install` afin de générer les pods.
+- Revener à la racine de votre projet et créer un fichier '.env', vous pouvez désormais ajouter les variables de configuration, un exemple est disponible dans le fichier '.env_template'.
+
+#### Lancer le projet
+
+- Exécuter la commande suivante `yarn start` afin de lancer le serveur Metro.
+- Démarrer xCode / Simulator si vous souhaitez lancer le projet sous iOS, sinon démarrer Android Studio.
+- Exécuter dans un autre terminal la commande suivante `yarn run ios` si vous souhaitez lancer le projet sous iOS, sinon éxécuter la commande `yarn run android` pour le lancer sous Android.
+
+PS: Pour lancer le projet sur un smartphone physique, vous pouvez suivre les instructions ici https://reactnative.dev/docs/running-on-device
+
+## Questions
+
 #### Question 1: Si cette intégration était en situation réelle, quels auraient été vos questions et/ou retours avant de commencer le travail ?
 
 - Est-ce le scope de la tâche ou celui de la maquette qui fait foi ?
