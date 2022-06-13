@@ -11,6 +11,7 @@ import CheckCircleIcon from '../../assets/icons/common/check-circle.svg'
 import { UserProfileCompletionCardItemStyle } from './_styles'
 import { defaultPalette } from '../../theme/palettes'
 import { setStepsStateChanged } from '../../redux/actions'
+import { iconTypeEnum } from '../../enum/iconTypeEnum'
 
 function UserProfileCompletionCardItem({ item, index }) {
     const dispatch = useDispatch()
@@ -18,21 +19,20 @@ function UserProfileCompletionCardItem({ item, index }) {
     /**
      * @description
      * @param {Object} item
-     * @param {number} index
      * @returns
      */
-    const getIconItemByIndex = (item, index) => {
+    const getIconItemByIconTypeEnum = (item) => {
         const color = item && item.completed ? defaultPalette.grey02 : defaultPalette.primary
-        switch (index) {
-            case 0:
+        switch (true) {
+            case iconTypeEnum.IconProfile === item.icon_type:
                 return <UserIcon height={24} width={24} fill={color} />
-            case 1:
+            case iconTypeEnum.IconPlay === item.icon_type:
                 return <PlayIcon height={24} width={24} fill={color} />
-            case 2:
+            case iconTypeEnum.IconVenue === item.icon_type:
                 return <SoccerFieldIcon height={24} width={24} fill={color} />
-            case 3:
+            case iconTypeEnum.IconRows === item.icon_type:
                 return <ListIcon height={24} width={24} fill={color} />
-            case 4:
+            case iconTypeEnum.IconCamera === item.icon_type:
                 return <PhotoCameraIcon height={24} width={24} fill={color} />
             default:
                 break
@@ -65,7 +65,7 @@ function UserProfileCompletionCardItem({ item, index }) {
                                 : UserProfileCompletionCardItemStyle.UserProfileCompletionCardItemCardIconContainerActivated
                         }
                     >
-                        {getIconItemByIndex(item, index)}
+                        {getIconItemByIconTypeEnum(item)}
                         {item && item.completed && (
                             <CheckCircleIcon
                                 height={20}

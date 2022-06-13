@@ -8,7 +8,7 @@ function UserProfileCompletionCardList() {
     return (
         <ScrollView>
             {steps.map((item, index) => (
-                <UserProfileCompletionCardItem key={index} item={item} index={index} />
+                <UserProfileCompletionCardItem key={item.icon_type} item={item} index={index} />
             ))}
         </ScrollView>
     )
